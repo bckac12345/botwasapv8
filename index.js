@@ -32,7 +32,7 @@ const { jadibot, stopjadibot, listjadibot } = require('./lib/jadibot');
 const { yta, ytv, igdl, upload, formatDate } = require('./lib/ytdl');
 
 //data
-owner = ["6282334297175@s.whatsapp.net"];
+owner = ["628895131355@s.whatsapp.net"];
 mns = "```";
 battery = {
   persen: "" || "tidak terdeteksi",
@@ -431,11 +431,7 @@ ${readMore}
       } else if (listbut == "sosial media") {
         const medsos = `
 *❏ Sosial Media*
-├ *github* : http://github.com/affisjunianto
-├ *Fb* : affis junianto tri saputro
-├ *Ig* : @affis_saputro123
-├ *Wa* : +62 823-3429-7175
-└ *Yt* : comming soon
+└ *Yt* : https://www.youtube.com/channel/UCYhiuwND1LpnuZBU1PGNSdg
 `
         client.sendMessage(from, fs.readFileSync("./lib/image/medsos.jpeg"), image, {quoted: mek, caption: medsos})
       }
@@ -470,7 +466,7 @@ ${readMore}
         case 'menu':
           var menulist = client.prepareMessageFromContent(from, {
             "listMessage" :{
-              "title": `${ucapanWaktu} kak ${pushname}\n\nini adalah bot ${client.user.name}\nbot ini bisa di buat menggunakan termux. untuk script nya bisa di download di github owner\ndan untuk fitur fitur nya bisa kalian add sendiri:)\n\nThanks for suports\nortu\nfadhil\nangga\nhanz\nadiwajshing\ntermos bot maker\nmhankbarbar`,
+              "title": `${ucapanWaktu} kak ${pushname}`,
               "description": `bot ini berjalan selama \n${runtime(process.uptime())}`,
               "buttonText": "click here👈",
               "listType": "SINGLE_SELECT",
@@ -496,15 +492,15 @@ ${readMore}
           break;
         case 'owner':
           const vacrd = `BEGIN:VCARD\n`+`VERSION:3.0\n`+
-                        `FN:owner Bot\n`+
-                        `ORG:Developer ${client.user.name}\n`+
-                        'TEL;type=CELL;type=VOICE;waid=6282334297175' +
-                        ':+6282334297175\n' + 
+                        `FN:Aditya\n`+
+                        `ORG:Developer CrispyNetwork`+
+                        'TEL;type=CELL;type=VOICE;waid=628895131355' +
+                        ':+628895131355\n' + 
                         'END:VCARD'
           client.sendMessage(from, {display: "owner Bot", vcard: vacrd}, contact, {quoted: mek})
           break;
-        case 'github':
-          client.sendMessage(from, "*❏ My github for download this script*\n\nhttp://github.com/affisjunianto", text)
+        case 'youtube':
+          client.sendMessage(from, "*❏ My Youtube*\n\nhttps://www.youtube.com/channel/UCYhiuwND1LpnuZBU1PGNSdg", text)
           break;
         case 'play':
           if (args.length === 0) return reply(`parameter salah\nsilahkan ketik *${prefix}play* _lagu yang ingin di cari_`)
@@ -552,8 +548,8 @@ ${readMore}
         case 'swm':
         case 'stickerwm':
         case 'sticker':
-          var a = "affis junianto";
-          var b = "+6282334297175";
+          var a = "Crispy";
+          var b = "Network";
           if (isMedia && !mek.message.videoMessage || isQuotedImage ) {
           const encmedia = isQuotedImage   ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
            media = await client.downloadAndSaveMediaMessage(encmedia)
